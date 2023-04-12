@@ -1,0 +1,63 @@
+{
+  "name": "sample_react_library",
+  "version": "1.0.0",
+  "description": "This is a sample boilerplate for React Component Library",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NGimhana/sample_react_component_library_boilerplate"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy": "cp ./package.json ./dist",
+    "build": "rm -rf dist && webpack --mode production && npm run copy",
+    "lint": "npx eslint .",
+    "test-ci": "npm run test-dev -- --coverage",
+    "test-dev": "react-scripts test --watchAll=false"
+  },
+  "keywords": [
+    "react",
+    "components"
+  ],
+  "author": "Nadeeshan Gimhana",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "eslint": "^8.37.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "react-scripts": "^5.0.1",
+    "webpack": "^4.28.3",
+    "webpack-cli": "^3.2.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3"
+  },
+  "dependencies": {
+    "prop-types": "latest",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "./src/**/*.js"
+    ],
+    "coveragePathIgnorePatterns": [
+      "./src/index.js",
+      "./src/reportWebVitals.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "restoreMocks": true
+  }
+}
