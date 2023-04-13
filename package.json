@@ -1,7 +1,7 @@
 {
-  "name": "sample_react_library",
+  "name": "npm-bundler",
   "version": "1.0.0",
-  "description": "This is a sample boilerplate for React Component Library",
+  "description": "simple components bundler.",
   "main": "index.js",
   "repository": {
     "type": "git"
