@@ -8,8 +8,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "link": "cd ./dist && npm link && cd ../",
     "copy": "cp ./package.json ./dist",
-    "build": "rm -rf dist && webpack --mode production && npm run copy",
+    "build": "rm -rf dist && webpack --mode production",
     "lint": "npx eslint .",
     "test-ci": "npm run test-dev -- --coverage",
     "test-dev": "react-scripts test --watchAll=false"
