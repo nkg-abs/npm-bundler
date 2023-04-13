@@ -7,8 +7,7 @@ executeAdoptScript(){
 }
 
 cleanUp(){
-	rm ./src/components/simpleButton.*
-	rm ./src/core/actions.test.js
+	rm ./src/components/*
 	rm ./adopt.*
 	rm reset.sh
 }
