@@ -1,3 +1,1 @@
-test('Sample test.', () => {
-
-});
+test('Sample test.', () => {});
