@@ -1,7 +1,10 @@
 const path = require('path');
 const glob = require('glob');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
+	mode: 'production',
+	externals: [nodeExternals()],
 	entry: {
 		index: './src/',
 		...glob.sync('./src/components/!(*.spec.js)')
