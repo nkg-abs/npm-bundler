@@ -1,6 +1,7 @@
 const path = require('path');
 const glob = require('glob');
 const nodeExternals = require('webpack-node-externals');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 	mode: 'production',
@@ -13,6 +14,7 @@ module.exports = {
 				[path.parse(filePath).name]: filePath,
 			}), {}),
 	},
+	plugins: [new CleanWebpackPlugin()],
 	module: {
 		rules: [
 			{

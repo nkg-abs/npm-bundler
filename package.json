@@ -9,9 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "link": "cd ./dist && npm link && cd ../",
-    "clean": "rm -rf dist",
     "copy": "cp ./package.json ./dist",
-    "build": "npm run clean && webpack --mode production && npm run copy",
+    "build": "webpack --mode production && npm run copy",
     "build-dev": "webpack --json > .stats.json && du -sh dist && npm run copy",
     "lint": "npx eslint .",
     "stats": "npx webpack-bundle-analyzer .stats.json",
@@ -33,6 +32,7 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
     "eslint": "^8.37.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-unused-imports": "^2.0.0",
