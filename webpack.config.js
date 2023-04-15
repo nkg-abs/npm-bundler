@@ -3,17 +3,24 @@ const glob = require('glob');
 const nodeExternals = require('webpack-node-externals');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
+const cwd = './src';
+const extensions = ['.js'];
+const ignore = [
+	'**/*.test.js',
+	'**/*.spec.js',
+	'**/setupTests.js',
+];
+const entry = glob
+	.sync(`**/*{${ extensions.join(',') }}`, { cwd, ignore })
+	.reduce((acc, filePath) => ({
+		...acc,
+		[path.parse(filePath).name]: `${ cwd }/${ filePath }`,
+	}), {});
+
 module.exports = {
 	mode: 'production',
 	externals: [nodeExternals()],
-	entry: {
-		index: './src/',
-		...glob.sync('./src/components/!(*.spec.js)')
-			.reduce((acc, filePath) => ({
-				...acc,
-				[path.parse(filePath).name]: filePath,
-			}), {}),
-	},
+	entry: entry,
 	plugins: [new CleanWebpackPlugin()],
 	module: {
 		rules: [
